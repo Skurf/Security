@@ -29,7 +29,7 @@ def delete_user(url):
     else:
         print('(+) deletion failed')
         print('(+) exiting script')
-
+        sys.exit(-1)
 
 def main():
     if len(sys.argv) != 2:
